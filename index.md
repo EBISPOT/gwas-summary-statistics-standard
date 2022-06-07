@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+## GWAS-SSF: A GWAS Summary Statistics Format
 
-You can use the [editor on GitHub](https://github.com/EBISPOT/gwas-summary-statistics-standard/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This repository is for maintaining the GWAS-SSF (GWAS summary statistics format) specification. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Click [here](gwas-ssf_v0.1.pdf) for the current specification. 
+Examples are [here](examples).
 
-### Markdown
+Comments, suggestions and issues are welcome via the issue tracker.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+### Summary
 
-# Header 1
-## Header 2
-### Header 3
+* GWAS summary statistics format (GWAS-SSF) is composed of two files:
+  1. summary statistics data file (TSV) e.g. [0000123.tsv](examples/0000123.tsv)
+  2. accompanying metadata file (YAML) e.g. [0000123.yaml](examples/0000123.yaml)
 
-- Bulleted
-- List
+#### Summary statistics data file
+* The summary statistics data file is a TSV flat file of tab-delimited values that can be compressed (see [schamatic](images/schematic.png)), reporting data from a single genome-wide analysis. 
+* The first line of the summary statistics data file contains the headers to the table. 
+* The rows after the header store the variant association data. 
+* Where permitted, values can be omitted by the presence of 'NA'. 
+* There are no limits to the number of rows or columns that the table can have, however, a set of mandatory fields (defined in [spec](gwas-ssf_v0.1.pdf), see Table 1) must be present in a defined order. 
+* A file may contain additional columns beyond the set of mandatory fields. 
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/EBISPOT/gwas-summary-statistics-standard/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#### Metadata file
+* The metadata data file describes the summary statistics data file such as the filename and md5sum (see [example](examples/0000123.yaml) for example)
+* The metadata data file describes the GWAS data such as sample, trait, genome assembly etc (see [spec](gwas-ssf_v0.1.pdf))
