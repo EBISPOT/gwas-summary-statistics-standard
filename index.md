@@ -15,7 +15,7 @@ Comments, suggestions and issues are welcome via the [issue tracker](https://git
   2. accompanying metadata file (YAML) e.g. [0000123.yaml](examples/0000123.yaml)
 
 #### Summary statistics data file
-* The summary statistics data file is a TSV flat file of tab-delimited values that can be compressed (see [schamatic](images/schematic.png)), reporting data from a single genome-wide analysis. 
+* The summary statistics data file is a TSV flat file of tab-delimited values that can be compressed (see [schematic](images/schematic.png)), reporting data from a single genome-wide analysis. 
 * The first line of the summary statistics data file contains the headers to the table. 
 * The rows after the header store the variant association data. 
 * Where permitted, values can be omitted by the presence of 'NA'. 
