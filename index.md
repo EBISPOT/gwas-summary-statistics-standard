@@ -5,7 +5,7 @@ This repository is for maintaining the GWAS-SSF (GWAS summary statistics format)
 Click [here](gwas-ssf_v0.1.pdf) for the current specification. 
 Examples are [here](examples).
 
-Comments, suggestions and issues are welcome via the issue tracker.
+Comments, suggestions and issues are welcome via the [issue tracker](https://github.com/EBISPOT/gwas-summary-statistics-standard/issues).
 
 
 ### Summary
