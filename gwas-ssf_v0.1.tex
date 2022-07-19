@@ -45,7 +45,7 @@ These requirements were used to define the backbone of a format---the GWAS-SSF--
 The GWAS summary statistics format (GWAS-SSF) is composed of two files, the summary statistics data file and accompanying metadata file.
 
 \subsection{Summary statistics data format}
-The GWAS-SSF data file is a TSV flat file of tab-delimited values that can be compressed (see Figure~\reef{fig1:schematic} for a schematic representation), reporting data from a single genome-wide analysis. The first line of the file contains the headers to the table. The rows after the header store the variant association data. Where permitted, values can be omitted by the presence of \texttt{NA}. There are no limits to the number of rows or columns that the table can have, however, a set of mandatory fields (defined in Table~1\ref{tab:sum_stats_def}) must be present in a defined order. A file may contain additional columns beyond the set of mandatory fields. Table 1 shows some non-mandatory (encouraged) fields that may be present.
+The GWAS-SSF data file is a TSV flat file of tab-delimited values that can be compressed (see Figure~\ref{fig:schematic} for a schematic representation), reporting data from a single genome-wide analysis. The first line of the file contains the headers to the table. The rows after the header store the variant association data. Where permitted, values can be omitted by the presence of \texttt{NA}. There are no limits to the number of rows or columns that the table can have, however, a set of mandatory fields (defined in Table~\ref{tab:sum_stats_def}) must be present in a defined order. A file may contain additional columns beyond the set of mandatory fields. Table 1 shows some non-mandatory (encouraged) fields that may be present.
 
 
 % EXAMPLE SUMSTATS
@@ -72,7 +72,7 @@ chromosome  base_pair_location  effect_allele  other_allele  beta        standar
  \centering
  \caption{Schematic representation of the summary statistics table. Examples of data content within each specific field are provided in Table~\ref{tab:sum_stats_def}.}
  \includegraphics[width=\textwidth]{schematic}
- \label{fig1:schematic}
+ \label{fig:schematic}
 \end{figure}
 % ----------
 
@@ -116,8 +116,8 @@ chromosome  base_pair_location  effect_allele  other_allele  beta        standar
     \item [b] Effect allele frequency can be rounded up to a threshold value defined in the metadata.
     \item [c] 'LONG\_STRING' can be used where allele string is too long to be represented. 
    \end{tablenotes}
+   \label{tab:sum_stats_def}
   \end{threeparttable}
-\label{tab:sum_stats_def}
 \end{table}
 \end{landscape}
 \normalsize
@@ -125,7 +125,7 @@ chromosome  base_pair_location  effect_allele  other_allele  beta        standar
 
 
 \subsection{Summary statistics table contents}
-Four fields in the summary statistics table, combined with the reference genome assembly provided in a metadata file (see below), unambiguously define the genetic variants (all field definitions can be found in Table 1). These fields are the chromosome (\textit{chromosome}), the genomic location position on the chromosome (\textit{base\_pair\_location}), the effect allele (\textit{effect\_allele}), and the non-effect allele (\textit{other\_allele}). Chromosome values are integers from 1 to 25, with chromosome X mapping to 23, chromosome Y to 24, and mitochondrial to 25. Genomic location is an integer value representing the first position of the variant in the reference genome, using 1-based indexing (see Figure~\ref{fig2:variant_rep}) to maximise interoperability with variant call format (VCF) \cite{vcf}. The \textit{effect\_allele} field captures the allele for which the effect is associated with, while the \textit{other\_allele} field reports the non-effect allele. Both of the allele fields will contain allele strings, including cases where variants are insertions and deletions (see Figure~\ref{fig2:variant_rep}). These four fields (\textit{chromosome, base\_pair\_location, effect\_allele, other\_allele}) are concatenated to populate the \textit{variant\_id} field and rsID can be stored in the \textit{rsid} field, but both fields are optional. 
+Four fields in the summary statistics table, combined with the reference genome assembly provided in a metadata file (see below), unambiguously define the genetic variants (all field definitions can be found in Table 1). These fields are the chromosome (\textit{chromosome}), the genomic location position on the chromosome (\textit{base\_pair\_location}), the effect allele (\textit{effect\_allele}), and the non-effect allele (\textit{other\_allele}). Chromosome values are integers from 1 to 25, with chromosome X mapping to 23, chromosome Y to 24, and mitochondrial to 25. Genomic location is an integer value representing the first position of the variant in the reference genome, using 1-based indexing (see Figure~\ref{fig:variant_rep}) to maximise interoperability with variant call format (VCF) \cite{Danecek:2011ut}. The \textit{effect\_allele} field captures the allele for which the effect is associated with, while the \textit{other\_allele} field reports the non-effect allele. Both of the allele fields will contain allele strings, including cases where variants are insertions and deletions (see Figure~\ref{fig:variant_rep}). These four fields (\textit{chromosome, base\_pair\_location, effect\_allele, other\_allele}) are concatenated to populate the \textit{variant\_id} field and rsID can be stored in the \textit{rsid} field, but both fields are optional. 
 
 All rows contain the following association statistics: p-value (\textit{p\_value}), the effect size (\textit{effect\_size}), and the standard error (\textit{standard\_error}). Whether the effect size is given as beta or odds ratio is defined in the metadata in the field \textit{effectStatistic}. Depending on the precision of software that performed the calculation of association, p-values in GWAS analyses may appear rounded to zero or one. This is particularly problematic where highly significant associations (e.g.\ $p < 10^{-300}$) are rounded to zero, preventing associations being ranked in order of significance. Calculation of accurate p-values is recommended where possible. Where this is not possible due to limitations of the software used, the GWAS-SSF requires the analysis and genotype imputation software and version to be present in the metadata, to help users of the summary statistics interpret these values. Alternatively, p-values can be expressed as negative log values, in which case the metadata field \textit{pvalueIsNegLog10} should be set to true. Effect allele frequency (\textit{effect\_allele\_frequency}) is a mandatory field. However, where privacy concerns might otherwise be a barrier to sharing the data, a cutoff may be specified in the metadata (\textit{effectAlleleFreqLowerLimit} field, see Table 2) so that frequencies below that cutoff are rounded-up to mask their true values. For example, \textit{effectAlleleFreqLowerLimit} = 0.01 in the metadata file would communicate that the lowest possible value for the effect allele frequency in this file is 0.01, and anything below this threshold has been rounded up to 0.01.
 
@@ -168,7 +168,7 @@ All rows contain the following association statistics: p-value (\textit{p\_value
 % ------------
 
 \subsection{Summary statistics metadata}
-An additional file accompanies the summary statistics data file containing metadata describing the summary statistics such as the name and md5sum of the summary statistics data file (see Section~\ref{metadata_example} for example) and the GWAS metadata itself, including sample and experimental metadata (Table 2),  thereby ensuring the reusability of the data. The metadata file fields can be expanded as needed in the future, and as with the summary statistics file, additional columns can be included as required. Sample metadata fields include descriptions of the trait under investigation and the sample size and ancestry. An additional field ancestryMethod can be used to indicate whether the ancestry descriptor is self-reported or genetically defined (encouraged). We recommend that ancestry is described according to the standardised framework guidelines described in Morales et al, 2018 \cite[?]. Every effort should be made to explicitly note whether the sample is admixed and the ancestral backgrounds that contribute to admixture. The trait description is free text and should include a clear description of the trait under study, including any relevant background characteristics of the study population, e.g.\ ``lung cancer in asthma patients''. Trait ontology terms can be stored in the metadata ontologyMapping field. The metadata file is in YAML format, which is ``a human-friendly data serialisation language for all programming languages'' (\url{https://yaml.org/}). There are both mandatory and encouraged metadata fields, which are detailed in Table~\ref{tab:metadata_fields}. 
+An additional file accompanies the summary statistics data file containing metadata describing the summary statistics such as the name and md5sum of the summary statistics data file (see Section~\ref{metadata_example} for example) and the GWAS metadata itself, including sample and experimental metadata (Table 2),  thereby ensuring the reusability of the data. The metadata file fields can be expanded as needed in the future, and as with the summary statistics file, additional columns can be included as required. Sample metadata fields include descriptions of the trait under investigation and the sample size and ancestry. An additional field ancestryMethod can be used to indicate whether the ancestry descriptor is self-reported or genetically defined (encouraged). We recommend that ancestry is described according to the standardised framework guidelines described in Morales et al, 2018 \cite{PMID:29448949}. Every effort should be made to explicitly note whether the sample is admixed and the ancestral backgrounds that contribute to admixture. The trait description is free text and should include a clear description of the trait under study, including any relevant background characteristics of the study population, e.g.\ ``lung cancer in asthma patients''. Trait ontology terms can be stored in the metadata ontologyMapping field. The metadata file is in YAML format, which is ``a human-friendly data serialisation language for all programming languages'' (\url{https://yaml.org/}). There are both mandatory and encouraged metadata fields, which are detailed in Table~\ref{tab:metadata_fields}. 
 
 
 \subsubsection{Metadata example} \label{metadata_example}
@@ -183,16 +183,14 @@ An additional file accompanies the summary statistics data file containing metad
  \centering
  \caption{Illustration of how variants are recorded in the summary statistics table for (a) SNP, (b) insertion, and (c) deletion alleles. Note that for insertions and deletions, the position of the base preceding the indel (the highlighted T at 8) is the position used to index the variant.}
  \includegraphics[width=0.8\textwidth]{variant_rep}
- \label{fig2:variant_rep}
+ \label{fig:variant_rep}
 \end{figure}
 % ----------
 
+\bibliographystyle{abbrv}
+\bibliography{refs}
 
-\begin{thebibliography}{9}
-
-\bibitem{vcf}
-Danecek P, Auton A, Abecasis G, et al. The variant call format and VCFtools. Bioinformatics. 2011;27(15):2156-2158. doi:10.1093/bioinformatics/btr330
-
-\end{thebibliography}
+% build notes: 
+% pdflatex gwas-ssf_v0.1; bibtex gwas-ssf_v0.1; pdflatex gwas-ssf_v0.1; pdflatex gwas-ssf_v0.1
 
 \end{document}
