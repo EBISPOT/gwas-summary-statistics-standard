@@ -3,7 +3,7 @@
 summaryStatisticsMetadata:
   genotypingTechnology: 
     - Genome-wide genotyping array
-  GWASCatalogStudyAccession: GCST90000123
+  GWASID: GCST90000123
   sampleSize: 12345
   sampleAncestry: 
     - European
@@ -13,14 +13,14 @@ summaryStatisticsMetadata:
   ancestryMethod:
     - self-reported
     - genetically determined
-  caseControlStudy: false
+  caseControlStudy: False
   dataFileName: 0000123.tsv
   fileType: GWAS-SSF v0.1
-  md5sum: 5b00c03a568bca2fcd0a09f1bf4f77fa
+  dataFileMd5sum: 5b00c03a568bca2fcd0a09f1bf4f77fa
   harmonised: false
   fileDescription: GWAS summary statistics; author uploaded.
   dateLastModified: 01-08-2021
   genomeAssembly: GRCh37
-  sortedByGenomicLocation: false
+  sortedByGenomicLocation: False
   effectStatistic: beta
-  pvalueIsNegLog10: false
+  pvalueIsNegLog10: False

@@ -1,0 +1,96 @@
+---
+# Schema
+name: gwas-ssf metadata schema v0.1
+
+type: map
+required: True
+mapping:
+  summaryStatisticsMetadata:
+    type: map
+    allowempty: True
+    required: True
+    mapping:
+      genotypingTechnology:
+        type: seq
+        sequence:
+          - type: str
+        required: True
+      GWASID:
+        type: str
+        required: True
+      sampleSize:
+        type: int
+        required: True
+      sampleAncestry:
+        type: seq
+        sequence:
+          - type: str
+        required: True
+      traitDescription:
+        type: seq
+        sequence:
+          - type: str
+        required: True
+      effectAlleleFreqLowerLimit:
+        type: float
+        required: False
+      ancestryMethod:
+        type: seq
+        sequence:
+          - type: str
+        required: False
+      caseControlStudy:
+        type: bool
+        required: False
+      caseCount:
+        type: int
+        required: False
+      controlCount:
+        type: int
+        required: False
+      dataFileName:
+        type: str
+        required: True
+      fileType:
+        type: str
+        required: True
+      dataFileMd5sum:
+        type: str
+        required: True
+      IsHarmonised:
+        type: bool
+        required: False
+      IsSorted:
+        type: bool
+        required: False
+      dateLastModified:
+        type: date
+        required: True
+      genomeAssembly:
+        type: str
+        required: True
+      effectStatistic:
+        type: str
+        enum: ['beta', 'odds_ratio', 'hazard_ratio']
+        required: False
+      pvalueIsNegLog10:
+        type: bool
+        required: False
+      analysisSoftware:
+        type: str
+        required: False
+      imputationPanel:
+        type: str
+        required: False
+      imputationSoftware:
+        type: str
+        required: False
+      hmCodeDefinition:
+        type: str
+        required: False
+      adjustedCovariates:
+        type: str
+        required: False
+      ontologyMapping:
+        type: str
+        required: False
