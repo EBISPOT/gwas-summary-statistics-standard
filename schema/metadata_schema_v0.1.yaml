@@ -86,11 +86,21 @@ mapping:
         type: str
         required: False
       hmCodeDefinition:
+        type: map
+        required: False
+        allowempty: True
+        mapping:
+          regex;(^[0-9]*$):
+            type: str
+      harmonisationReference:
         type: str
         required: False
       adjustedCovariates:
         type: str
         required: False
       ontologyMapping:
+        type: str
+        required: False
+      authorNotes:
         type: str
         required: False
