@@ -25,3 +25,7 @@ Comments, suggestions and issues are welcome via the issue tracker.
 #### Metadata file
 * The metadata data file describes the summary statistics data file such as the filename and md5sum (see [example](examples/0000123.yaml) for example)
 * The metadata data file describes the GWAS data such as sample, trait, genome assembly etc (see [spec](gwas-ssf_v0.1.pdf))
+
+### Create the pdf spec
+Convert the .tex to pdf:
+`pdflatex gwas-ssf_<version>.tex` generates the pdf, gwas-ssf_<version>.pdf.
