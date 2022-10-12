@@ -1,0 +1,47 @@
+---
+# GWAS Catalog Summary Statistics Metadata
+summaryStatisticsMetadata:
+  genotypingTechnology: 
+    - Genome-wide genotyping array
+  GWASCatalogStudyAccession: GCST90000123
+  sampleSize: 12345
+  sampleAncestry: 
+    - European
+  traitDescription: 
+    - breast carcinoma
+  effectAlleleFreqLowerLimit: 0.001
+  ancestryMethod:
+    - self-reported
+    - genetically determined
+  caseControlStudy: false
+  dataFileName: GCST90000123.h.tsv.gz
+  fileType: GWAS-SSF v0.1
+  md5sum: a2bcfef59544415a0ea5dc2c927072ca
+  harmonised: true
+  fileDescription: GWAS summary statistics; data harmonised to reference.
+  dateLastModified: 01-08-2021
+  harmonisationVersion: 0.1.0
+  genomeAssembly: GRCh38
+  harmonisationReference: Ensembl_104
+  sortedByGenomicLocation: true
+  effectStatistic: beta
+  pvalueIsNegLog10: false
+  hmCodeDefinition:
+    1: Palindromic; Infer strand; Forward strand; Alleles correct
+    2: Palindromic; Infer strand; Forward strand; Flipped alleles
+    3: Palindromic; Infer strand; Reverse strand; Alleles correct
+    4: Palindromic; Infer strand; Reverse strand; Flipped alleles
+    5: Palindromic; Assume forward strand; Alleles correct
+    6: Palindromic; Assume forward strand; Flipped alleles
+    7: Palindromic; Assume reverse strand; Alleles correct
+    8: Palindromic; Assume reverse strand; Flipped alleles
+    9: Palindromic; Drop palindromic; Not orientated
+    10: Forward strand; Alleles correct
+    11: Forward strand; Flipped alleles
+    12: Reverse strand; Alleles correct
+    13: Reverse strand; Flipped alleles
+    14: Required fields are not known; Not orientated
+    15: No matching variants in reference VCF; Not orientated
+    16: Multiple matching variants in reference VCF; Not orientated
+    17: Palindromic; Infer strand; EAF or reference VCF AF not known; Not orientated
+    18: Palindromic; Infer strand; EAF < specified minor allele frequency threshold; Not orientated

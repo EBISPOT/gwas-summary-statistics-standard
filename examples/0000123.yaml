@@ -1,0 +1,26 @@
+---
+# GWAS Catalog Summary Statistics Metadata
+summaryStatisticsMetadata:
+  genotypingTechnology: 
+    - Genome-wide genotyping array
+  GWASID: GCST90000123
+  sampleSize: 12345
+  sampleAncestry: 
+    - European
+  traitDescription: 
+    - breast carcinoma
+  effectAlleleFreqLowerLimit: 0.001
+  ancestryMethod:
+    - self-reported
+    - genetically determined
+  caseControlStudy: False
+  dataFileName: 0000123.tsv
+  fileType: GWAS-SSF v0.1
+  dataFileMd5sum: 5b00c03a568bca2fcd0a09f1bf4f77fa
+  harmonised: false
+  fileDescription: GWAS summary statistics; author uploaded.
+  dateLastModified: 01-08-2021
+  genomeAssembly: GRCh37
+  sortedByGenomicLocation: False
+  effectStatistic: beta
+  pvalueIsNegLog10: False
