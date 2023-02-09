@@ -12,7 +12,7 @@ Comments, suggestions and issues are welcome via the issue tracker.
 
 * GWAS summary statistics format (GWAS-SSF) is composed of two files:
   1. summary statistics data file (TSV) e.g. [0000123.tsv](examples/0000123.tsv)
-  2. accompanying metadata file (YAML) e.g. [0000123.yaml](examples/0000123.yaml)
+  2. accompanying metadata file (YAML) e.g. [0000123.tsv-meta.yaml](examples/0000123.tsv-meta.yaml)
 
 #### Summary statistics data file
 * The summary statistics data file is a TSV flat file of tab-delimited values that can be compressed (see [schamatic](images/schematic.png)), reporting data from a single genome-wide analysis. 
