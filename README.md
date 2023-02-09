@@ -23,8 +23,10 @@ Comments, suggestions and issues are welcome via the issue tracker.
 * A file may contain additional columns beyond the set of mandatory fields. 
 
 #### Metadata file
-* The metadata data file describes the summary statistics data file such as the filename and md5sum (see [example](examples/0000123.yaml) for example)
-* The metadata data file describes the GWAS data such as sample, trait, genome assembly etc (see [spec](gwas-ssf_v0.1-draft.pdf))
+* The metadata file describes the summary statistics data file such as the filename and md5sum (see [example](examples/0000123.yaml) for example)
+* The metadata file describes the GWAS data such as sample, trait, genome assembly etc (see [spec](gwas-ssf_v0.1-draft.pdf))
+* The metadata file can be validated against the [yaml schema](schema/metadata-schema.yaml) with a tool like [yamale](https://github.com/23andMe/Yamale) e.g. `yamale -s schema/metadata-schema.yaml examples/0000123.tsv-meta.yaml`
+* A [pydantic](https://docs.pydantic.dev/) schema is also available for python projects [here](schema/metadata.py)
 
 ### Create the pdf spec
 Convert the .tex to pdf:
