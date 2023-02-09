@@ -4,8 +4,7 @@ used by python projects for defining the metadata model.
 """
 
 from pydantic import (BaseModel,
-                      constr,
-                      AnyUrl)
+                      constr)
 from datetime import date
 from typing import List, Optional
 from enum import Enum
@@ -67,7 +66,7 @@ class SumStatsMetadata(BaseModel):
     adjustedCovariates: Optional[str] = None
     ontologyMapping: Optional[str] = None
     authorNotes: Optional[str] = None
-    GWASCatalogAPI: Optional[AnyUrl] = None
+    GWASCatalogAPI: Optional[str] = None
     sex: Optional[SexEnum] = None
     coordinateSystem: CoordinateSystemEnum = None
     samples: List[SampleMetadata] = []
