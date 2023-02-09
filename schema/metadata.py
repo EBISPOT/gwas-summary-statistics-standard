@@ -1,3 +1,8 @@
+"""
+A pydantic (https://docs.pydantic.dev/) schema that can be 
+used by python projects for defining the metadata model.
+"""
+
 from pydantic import (BaseModel,
                       constr,
                       AnyUrl)
