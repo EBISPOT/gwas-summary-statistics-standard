@@ -1,0 +1,188 @@
+{
+    "title": "GWAS Summary Statistics metadata schema",
+    "type": "object",
+    "properties": {
+        "genotypingTechnology": {
+            "title": "Genotypingtechnology",
+            "default": [],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "GWASID": {
+            "title": "Gwasid",
+            "pattern": "^GCST\\d+$",
+            "type": "string"
+        },
+        "traitDescription": {
+            "title": "Traitdescription",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "effectAlleleFreqLowerLimit": {
+            "title": "Effectallelefreqlowerlimit",
+            "type": "number"
+        },
+        "dataFileName": {
+            "title": "Datafilename",
+            "type": "string"
+        },
+        "fileType": {
+            "title": "Filetype",
+            "type": "string"
+        },
+        "dataFileMd5sum": {
+            "title": "Datafilemd5Sum",
+            "type": "string"
+        },
+        "isHarmonised": {
+            "title": "Isharmonised",
+            "default": false,
+            "type": "boolean"
+        },
+        "isSorted": {
+            "title": "Issorted",
+            "default": false,
+            "type": "boolean"
+        },
+        "dateLastModified": {
+            "title": "Datelastmodified",
+            "type": "string",
+            "format": "date"
+        },
+        "genomeAssembly": {
+            "title": "Genomeassembly",
+            "type": "string"
+        },
+        "effectStatistic": {
+            "$ref": "#/definitions/EffectStatisticEnum"
+        },
+        "pvalueIsNegLog10": {
+            "title": "Pvalueisneglog10",
+            "default": false,
+            "type": "boolean"
+        },
+        "analysisSoftware": {
+            "title": "Analysissoftware",
+            "type": "string"
+        },
+        "imputationPanel": {
+            "title": "Imputationpanel",
+            "type": "string"
+        },
+        "imputationSoftware": {
+            "title": "Imputationsoftware",
+            "type": "string"
+        },
+        "harmonisationReference": {
+            "title": "Harmonisationreference",
+            "type": "string"
+        },
+        "adjustedCovariates": {
+            "title": "Adjustedcovariates",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "ontologyMapping": {
+            "title": "Ontologymapping",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "authorNotes": {
+            "title": "Authornotes",
+            "type": "string"
+        },
+        "GWASCatalogAPI": {
+            "title": "Gwascatalogapi",
+            "type": "string"
+        },
+        "sex": {
+            "$ref": "#/definitions/SexEnum"
+        },
+        "coordinateSystem": {
+            "$ref": "#/definitions/CoordinateSystemEnum"
+        },
+        "samples": {
+            "title": "Samples",
+            "default": [],
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/SampleMetadata"
+            }
+        }
+    },
+    "definitions": {
+        "EffectStatisticEnum": {
+            "title": "EffectStatisticEnum",
+            "description": "An enumeration.",
+            "enum": [
+                "beta",
+                "odds_ratio",
+                "hazard_ratio"
+            ],
+            "type": "string"
+        },
+        "SexEnum": {
+            "title": "SexEnum",
+            "description": "An enumeration.",
+            "enum": [
+                "M",
+                "F",
+                "combined"
+            ],
+            "type": "string"
+        },
+        "CoordinateSystemEnum": {
+            "title": "CoordinateSystemEnum",
+            "description": "An enumeration.",
+            "enum": [
+                "0-based",
+                "1-based"
+            ],
+            "type": "string"
+        },
+        "SampleMetadata": {
+            "title": "SampleMetadata",
+            "type": "object",
+            "properties": {
+                "ancestryMethod": {
+                    "title": "Ancestrymethod",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "caseControlStudy": {
+                    "title": "Casecontrolstudy",
+                    "type": "boolean"
+                },
+                "caseCount": {
+                    "title": "Casecount",
+                    "type": "integer"
+                },
+                "controlCount": {
+                    "title": "Controlcount",
+                    "type": "integer"
+                },
+                "sampleSize": {
+                    "title": "Samplesize",
+                    "type": "integer"
+                },
+                "sampleAncestry": {
+                    "title": "Sampleancestry",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
