@@ -63,8 +63,8 @@ class SumStatsMetadata(BaseModel):
     imputationPanel: Optional[str] = None
     imputationSoftware: Optional[str] = None
     harmonisationReference: Optional[str] = None
-    adjustedCovariates: Optional[str] = None
-    ontologyMapping: Optional[str] = None
+    adjustedCovariates: List[str] = []
+    ontologyMapping: List[str] = []
     authorNotes: Optional[str] = None
     GWASCatalogAPI: Optional[str] = None
     sex: Optional[SexEnum] = None
