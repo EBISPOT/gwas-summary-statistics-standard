@@ -4,7 +4,6 @@
     "properties": {
         "genotypingTechnology": {
             "title": "Genotypingtechnology",
-            "default": [],
             "type": "array",
             "items": {
                 "type": "string"
@@ -111,7 +110,6 @@
         },
         "samples": {
             "title": "Samples",
-            "default": [],
             "type": "array",
             "items": {
                 "$ref": "#/definitions/SampleMetadata"

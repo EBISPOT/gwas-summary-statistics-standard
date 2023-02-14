@@ -46,7 +46,7 @@ class SampleMetadata(BaseModel):
 
 
 class SumStatsMetadata(BaseModel):
-    genotypingTechnology: List[str] = []
+    genotypingTechnology: List[str] = None
     GWASID: Optional[constr(regex=r'^GCST\d+$')] = None
     traitDescription: List[str] = None
     effectAlleleFreqLowerLimit: Optional[float] = None
@@ -69,7 +69,7 @@ class SumStatsMetadata(BaseModel):
     GWASCatalogAPI: Optional[str] = None
     sex: Optional[SexEnum] = None
     coordinateSystem: CoordinateSystemEnum = None
-    samples: List[SampleMetadata] = []
+    samples: List[SampleMetadata] = None
     
     class Config:
         title = 'GWAS Summary Statistics metadata schema'
