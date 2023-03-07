@@ -14,11 +14,6 @@ Enums
 """
 
 
-class EffectStatisticEnum(str, Enum):
-    beta = 'beta'
-    odds_ratio = 'odds_ratio'
-    hazard_ratio = 'hazard_ratio'
-
 
 class SexEnum(str, Enum):
     male = 'M'
@@ -37,36 +32,36 @@ Models
 
 
 class SampleMetadata(BaseModel):
-    ancestryMethod: Optional[List[str]] = None
-    caseControlStudy: Optional[bool] = None
-    caseCount: Optional[int] = None
-    controlCount: Optional[int] = None
-    sampleSize: int = None
-    sampleAncestry: List[str] = None
+    ancestry_method: Optional[List[str]] = None
+    case_control_study: Optional[bool] = None
+    case_count: Optional[int] = None
+    control_count: Optional[int] = None
+    sample_size: int = None
+    sample_ancestry: List[str] = None
 
 
 class SumStatsMetadata(BaseModel):
-    genotypingTechnology: List[str] = None
-    GWASID: Optional[constr(regex=r'^GCST\d+$')] = None
-    traitDescription: List[str] = None
-    effectAlleleFreqLowerLimit: Optional[float] = None
-    dataFileName: str = None
-    fileType: str = None
-    dataFileMd5sum: str = None
-    isHarmonised: Optional[bool] = False
-    isSorted: Optional[bool] = False
-    dateLastModified: date = None
-    genomeAssembly: str = None
-    analysisSoftware: Optional[str] = None
-    imputationPanel: Optional[str] = None
-    imputationSoftware: Optional[str] = None
-    harmonisationReference: Optional[str] = None
-    adjustedCovariates: Optional[List[str]] = None
-    ontologyMapping: Optional[List[str]] = None
-    authorNotes: Optional[str] = None
-    GWASCatalogAPI: Optional[str] = None
+    genotyping_technology: List[str] = None
+    gwas_id: Optional[constr(regex=r'^GCST\d+$')] = None
+    trait_description: List[str] = None
+    minor_allele_freq_lower_limit: Optional[float] = None
+    data_file_name: str = None
+    file_type: str = None
+    data_file_md5sum: str = None
+    is_harmonised: Optional[bool] = False
+    is_sorted: Optional[bool] = False
+    date_last_modified: date = None
+    genome_assembly: str = None
+    analysis_software: Optional[str] = None
+    imputation_panel: Optional[str] = None
+    imputation_software: Optional[str] = None
+    harmonisation_reference: Optional[str] = None
+    adjusted_covariates: Optional[List[str]] = None
+    ontology_mapping: Optional[List[str]] = None
+    author_notes: Optional[str] = None
+    gwas_catalog_api: Optional[str] = None
     sex: Optional[SexEnum] = None
-    coordinateSystem: CoordinateSystemEnum = None
+    coordinate_system: CoordinateSystemEnum = None
     samples: List[SampleMetadata] = None
     
     class Config:

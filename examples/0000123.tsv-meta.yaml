@@ -1,24 +1,23 @@
 ---
-genotypingTechnology: 
+genotyping_technology: 
   - Genome-wide genotyping array
-GWASID: GCST90000123
+gwas_id: GCST90000123
 samples:
-- sampleSize: 12345
-  sampleAncestry: 
+- sample_size: 12345
+  sample_ancestry: 
     - European
-  ancestryMethod:
+  ancestry_method:
     - self-reported
     - genetically determined
-traitDescription: 
+trait_description: 
   - breast carcinoma
-minorAlleleFreqLowerLimit: 0.001
-dataFileName: 0000123.tsv
-fileType: GWAS-SSF v0.1
-dataFileMd5sum: 32ce41c3dca4cd9f463a0ce7351966fd
-isHarmonised: false
-isSorted: false
-fileDescription: GWAS summary statistics; author uploaded.
-dateLastModified: 2023-02-09
-genomeAssembly: GRCh37
-coordinateSystem: 1-based
+minor_allele_freq_lower_limit: 0.001
+data_file_name: 0000123.tsv
+file_type: GWAS-SSF v0.1
+data_file_md5sum: 32ce41c3dca4cd9f463a0ce7351966fd
+is_harmonised: false
+is_sorted: false
+date_last_modified: 2023-02-09
+genome_assembly: GRCh37
+coordinate_system: 1-based
 sex: combined
