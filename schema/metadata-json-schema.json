@@ -56,14 +56,6 @@
             "title": "Genomeassembly",
             "type": "string"
         },
-        "effectStatistic": {
-            "$ref": "#/definitions/EffectStatisticEnum"
-        },
-        "pvalueIsNegLog10": {
-            "title": "Pvalueisneglog10",
-            "default": false,
-            "type": "boolean"
-        },
         "analysisSoftware": {
             "title": "Analysissoftware",
             "type": "string"
@@ -117,16 +109,6 @@
         }
     },
     "definitions": {
-        "EffectStatisticEnum": {
-            "title": "EffectStatisticEnum",
-            "description": "An enumeration.",
-            "enum": [
-                "beta",
-                "odds_ratio",
-                "hazard_ratio"
-            ],
-            "type": "string"
-        },
         "SexEnum": {
             "title": "SexEnum",
             "description": "An enumeration.",

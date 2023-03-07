@@ -21,6 +21,4 @@ fileDescription: GWAS summary statistics; author uploaded.
 dateLastModified: 2023-02-09
 genomeAssembly: GRCh37
 coordinateSystem: 1-based
-effectStatistic: beta
-pvalueIsNegLog10: False
 sex: combined

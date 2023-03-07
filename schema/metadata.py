@@ -57,8 +57,6 @@ class SumStatsMetadata(BaseModel):
     isSorted: Optional[bool] = False
     dateLastModified: date = None
     genomeAssembly: str = None
-    effectStatistic: Optional[EffectStatisticEnum] = None
-    pvalueIsNegLog10: Optional[bool] = False
     analysisSoftware: Optional[str] = None
     imputationPanel: Optional[str] = None
     imputationSoftware: Optional[str] = None
