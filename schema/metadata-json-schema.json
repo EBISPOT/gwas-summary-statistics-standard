@@ -2,110 +2,102 @@
     "title": "GWAS Summary Statistics metadata schema",
     "type": "object",
     "properties": {
-        "genotypingTechnology": {
-            "title": "Genotypingtechnology",
+        "genotyping_technology": {
+            "title": "Genotyping Technology",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
-        "GWASID": {
-            "title": "Gwasid",
+        "gwas_id": {
+            "title": "Gwas Id",
             "pattern": "^GCST\\d+$",
             "type": "string"
         },
-        "traitDescription": {
-            "title": "Traitdescription",
+        "trait_description": {
+            "title": "Trait Description",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
-        "effectAlleleFreqLowerLimit": {
-            "title": "Effectallelefreqlowerlimit",
+        "minor_allele_freq_lower_limit": {
+            "title": "Minor Allele Freq Lower Limit",
             "type": "number"
         },
-        "dataFileName": {
-            "title": "Datafilename",
+        "data_file_name": {
+            "title": "Data File Name",
             "type": "string"
         },
-        "fileType": {
-            "title": "Filetype",
+        "file_type": {
+            "title": "File Type",
             "type": "string"
         },
-        "dataFileMd5sum": {
-            "title": "Datafilemd5Sum",
+        "data_file_md5sum": {
+            "title": "Data File Md5Sum",
             "type": "string"
         },
-        "isHarmonised": {
-            "title": "Isharmonised",
+        "is_harmonised": {
+            "title": "Is Harmonised",
             "default": false,
             "type": "boolean"
         },
-        "isSorted": {
-            "title": "Issorted",
+        "is_sorted": {
+            "title": "Is Sorted",
             "default": false,
             "type": "boolean"
         },
-        "dateLastModified": {
-            "title": "Datelastmodified",
+        "date_last_modified": {
+            "title": "Date Last Modified",
             "type": "string",
             "format": "date"
         },
-        "genomeAssembly": {
-            "title": "Genomeassembly",
+        "genome_assembly": {
+            "title": "Genome Assembly",
             "type": "string"
         },
-        "effectStatistic": {
-            "$ref": "#/definitions/EffectStatisticEnum"
-        },
-        "pvalueIsNegLog10": {
-            "title": "Pvalueisneglog10",
-            "default": false,
-            "type": "boolean"
-        },
-        "analysisSoftware": {
-            "title": "Analysissoftware",
+        "analysis_software": {
+            "title": "Analysis Software",
             "type": "string"
         },
-        "imputationPanel": {
-            "title": "Imputationpanel",
+        "imputation_panel": {
+            "title": "Imputation Panel",
             "type": "string"
         },
-        "imputationSoftware": {
-            "title": "Imputationsoftware",
+        "imputation_software": {
+            "title": "Imputation Software",
             "type": "string"
         },
-        "harmonisationReference": {
-            "title": "Harmonisationreference",
+        "harmonisation_reference": {
+            "title": "Harmonisation Reference",
             "type": "string"
         },
-        "adjustedCovariates": {
-            "title": "Adjustedcovariates",
+        "adjusted_covariates": {
+            "title": "Adjusted Covariates",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
-        "ontologyMapping": {
-            "title": "Ontologymapping",
+        "ontology_mapping": {
+            "title": "Ontology Mapping",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
-        "authorNotes": {
-            "title": "Authornotes",
+        "author_notes": {
+            "title": "Author Notes",
             "type": "string"
         },
-        "GWASCatalogAPI": {
-            "title": "Gwascatalogapi",
+        "gwas_catalog_api": {
+            "title": "Gwas Catalog Api",
             "type": "string"
         },
         "sex": {
             "$ref": "#/definitions/SexEnum"
         },
-        "coordinateSystem": {
+        "coordinate_system": {
             "$ref": "#/definitions/CoordinateSystemEnum"
         },
         "samples": {
@@ -117,16 +109,6 @@
         }
     },
     "definitions": {
-        "EffectStatisticEnum": {
-            "title": "EffectStatisticEnum",
-            "description": "An enumeration.",
-            "enum": [
-                "beta",
-                "odds_ratio",
-                "hazard_ratio"
-            ],
-            "type": "string"
-        },
         "SexEnum": {
             "title": "SexEnum",
             "description": "An enumeration.",
@@ -150,31 +132,31 @@
             "title": "SampleMetadata",
             "type": "object",
             "properties": {
-                "ancestryMethod": {
-                    "title": "Ancestrymethod",
+                "ancestry_method": {
+                    "title": "Ancestry Method",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "caseControlStudy": {
-                    "title": "Casecontrolstudy",
+                "case_control_study": {
+                    "title": "Case Control Study",
                     "type": "boolean"
                 },
-                "caseCount": {
-                    "title": "Casecount",
+                "case_count": {
+                    "title": "Case Count",
                     "type": "integer"
                 },
-                "controlCount": {
-                    "title": "Controlcount",
+                "control_count": {
+                    "title": "Control Count",
                     "type": "integer"
                 },
-                "sampleSize": {
-                    "title": "Samplesize",
+                "sample_size": {
+                    "title": "Sample Size",
                     "type": "integer"
                 },
-                "sampleAncestry": {
-                    "title": "Sampleancestry",
+                "sample_ancestry": {
+                    "title": "Sample Ancestry",
                     "type": "array",
                     "items": {
                         "type": "string"
