@@ -47,8 +47,8 @@
             "default": false,
             "type": "boolean"
         },
-        "date_last_modified": {
-            "title": "Date Last Modified",
+        "date_metadata_last_modified": {
+            "title": "Date Last metadata Modified",
             "type": "string",
             "format": "date"
         },
@@ -157,6 +157,13 @@
                 },
                 "sample_ancestry": {
                     "title": "Sample Ancestry",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sample_ancestry_category": {
+                    "title": "Sample Ancestry board category",
                     "type": "array",
                     "items": {
                         "type": "string"

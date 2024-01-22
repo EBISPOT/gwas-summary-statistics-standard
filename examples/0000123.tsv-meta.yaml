@@ -1,23 +1,45 @@
 ---
-genotyping_technology: 
-  - Genome-wide genotyping array
+# Study meta-data
 gwas_id: GCST90000123
-samples:
-- sample_size: 12345
-  sample_ancestry: 
-    - European
-  ancestry_method:
-    - self-reported
-    - genetically determined
-trait_description: 
+author_notes: Summary statistics of a meta-analysis
+gwas_catalog_api: https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000123
+date_metadata_last_modified: 2024-01-16
+
+# Trait Information
+trait_description:
   - breast carcinoma
-minor_allele_freq_lower_limit: 0.001
-data_file_name: 0000123.tsv
-file_type: GWAS-SSF v0.1
-data_file_md5sum: 32ce41c3dca4cd9f463a0ce7351966fd
-is_harmonised: false
-is_sorted: false
-date_last_modified: 2023-02-09
+ontology_mapping:
+  - EFO_0000305
+
+# Genotyping Information
 genome_assembly: GRCh37
 coordinate_system: 1-based
+genotyping_technology:
+  - Genome-wide genotyping array
+imputation_panel: 1000 Genomes Phase 3
+imputation_software: IMPUTE
+
+# Sample Information
+samples:
+  - sample_ancestry_category:
+      - European
+    sample_size: 12345
+    ancestry_method:
+      - self-reported
+      - genetically determined
+    case_control_study: true
 sex: combined
+
+# Summary Statistic information
+data_file_name: GCST90000123.tsv
+file_type: GWAS-SSF v1.0
+data_file_md5sum: 32ce41c3dca4cd9f463a0ce7351966fd
+analysis_software: PLINK 1.9
+adjusted_covariates:
+  - age
+  - sex
+minor_allele_freq_lower_limit: 0.001
+
+# Harmonization status
+is_harmonised: false
+is_sorted: false
