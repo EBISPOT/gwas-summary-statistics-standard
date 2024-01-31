@@ -150,7 +150,8 @@ All rows contain the following association statistics: p-value (either \textit{p
   \textit{case\_count} & Number of cases for case/control study & Integer & No, unless caseControlStudy is true\\
   \textit{control\_count} & Number of controls for case/control study & Integer & No, unless caseControlStudy is true\\
   \textit{case\_control\_study} & Flag whether the study is a case-control study & Boolean & No (default is false)\\
-  \textit{sample\_ancestry} & Sample ancestry & Text string (multiple possible) & Yes\\
+  \textit{sample\_ancestry} & Sample ancestry & Text string (multiple possible) & No\\
+  \textit{sample\_ancestry\_category} & Sample ancestry board category & Text string (multiple possible) & Yes\\
   \textit{genotyping\_technology} & Genotyping technology & Text string (multiple possible) & Yes\\
   \textit{analysis\_software} & Software and version used for the association analysis & Text string & Yes if p-values of 0 given\\
   \textit{imputation\_panel} & Imputation panel & Text string & No\\
