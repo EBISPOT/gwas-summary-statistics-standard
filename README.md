@@ -19,7 +19,7 @@ Comments, suggestions and issues are welcome via the issue tracker.
 * The first line of the summary statistics data file contains the headers to the table. 
 * The rows after the header store the variant association data. 
 * Where permitted, values can be omitted by the presence of 'NA'. 
-* There are no limits to the number of rows or columns that the table can have, however, a set of mandatory fields (defined in [spec](gwas-ssf_v0.1-draft.pdf), see Table 1) must be present in a defined order. 
+* There are no limits to the number of rows or columns that the table can have, however, a set of mandatory fields (defined in [spec](gwas-ssf_v1.0.0.pdf), see Table 1) must be present in a defined order. 
 * A file may contain additional columns beyond the set of mandatory fields. 
 
 #### Metadata file
