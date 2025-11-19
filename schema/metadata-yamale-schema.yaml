@@ -17,7 +17,7 @@ adjusted_covariates: list(str(), required=False)
 ontology_mapping: list(str(), required=False)
 author_notes: str(required=False) 
 gwas_catalog_api: str(required=False)
-sex: enum('M', 'F', 'combined', required=False) 
+sex: enum('M', 'F', 'combined', 'NR', required=False) 
 coordinate_system: enum('0-based', '1-based', required=False) 
 samples: list(include('SampleMetadata', required=False))
 ---

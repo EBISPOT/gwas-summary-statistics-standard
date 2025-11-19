@@ -11,7 +11,7 @@
 \usepackage{verbatim}
 
 
-\title{GWAS-SSF: A GWAS Summary Statistics Format (v0.1)}
+\title{GWAS-SSF: A GWAS Summary Statistics Format (v1.0.2)}
 \date{\today}
 
 \begin{document}
@@ -163,7 +163,7 @@ All rows contain the following association statistics: p-value (either \textit{p
   \textit{hm\_code\_definition} & Description of harmonisation codes & Text string & Only given in harmonised datasets\\
   \textit{adjusted\_covariates} & Any covariates the GWAS is adjusted for & Text string (multiple possible) & No\\
   \textit{ontology\_mapping} & Short form ontology terms describing the trait & Text string (multiple possible) & No\\
-  \textit{sex} & Indicate if and how the study was sex-stratified & ``M'', ``F'', ``combined'' or ``\#NA'' & No\\
+  \textit{sex} & Indicate if and how the study was sex-stratified & ``M'', ``F'', ``combined'', ``NR'' & No\\
   \hline
  \end{tabularx}
  \label{tab:metadata_fields}
