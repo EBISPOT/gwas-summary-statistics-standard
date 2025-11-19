@@ -19,6 +19,7 @@ class SexEnum(str, Enum):
     male = 'M'
     female = 'F'
     combined = 'combined'
+    unknown='NR'
 
 
 class CoordinateSystemEnum(str, Enum):

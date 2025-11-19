@@ -115,7 +115,8 @@
             "enum": [
                 "M",
                 "F",
-                "combined"
+                "combined",
+                "NR"
             ],
             "type": "string"
         },
