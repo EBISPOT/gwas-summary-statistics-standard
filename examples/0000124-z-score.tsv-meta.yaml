@@ -1,0 +1,45 @@
+---
+# Study meta-data
+gwas_id: GCST90000124
+author_notes: Summary statistics of a meta-analysis with z-score-only output
+gwas_catalog_api: https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000124
+date_metadata_last_modified: 2026-06-17
+
+# Trait Information
+trait_description:
+  - breast carcinoma
+ontology_mapping:
+  - EFO_0000305
+
+# Genotyping Information
+genome_assembly: GRCh37
+coordinate_system: 1-based
+genotyping_technology:
+  - Genome-wide genotyping array
+imputation_panel: 1000 Genomes Phase 3
+imputation_software: IMPUTE
+
+# Sample Information
+samples:
+  - sample_ancestry_category:
+      - European
+    sample_size: 12345
+    ancestry_method:
+      - self-reported
+      - genetically determined
+    case_control_study: true
+sex: combined
+
+# Summary Statistic information
+data_file_name: 0000124-z-score.tsv
+file_type: GWAS-SSF v1.1
+data_file_md5sum: eb50e25b362a0dbba5c076f1ed36dcc9
+analysis_software: METAL 2011-03-25
+adjusted_covariates:
+  - age
+  - sex
+minor_allele_freq_lower_limit: 0.001
+
+# Harmonisation status
+is_harmonised: false
+is_sorted: false
