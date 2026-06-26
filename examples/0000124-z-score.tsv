@@ -1,0 +1,6 @@
+chromosome	base_pair_location	effect_allele	other_allele	z-score	standard_error	effect_allele_frequency	p_value	variant_id	rsid	ref_allele
+1	869388	A	G	-2.0619	#NA	0.997221	0.0392	1_869388_A_G	#NA	EA
+1	205813916	G	C	-2.6992	#NA	0.983589	0.00695	1_205813916_G_C	rs74143855	EA
+2	70478797	T	TG	11.1833	#NA	0.934121	3.5E-30	2_70478797_T_TG	rs142640435	EA
+7	8458030	TC	T	-18.2089	#NA	0.78451	5.7E-76	7_8458030_TC_T	rs774624811	EA
+23	24173186	A	C	0.0443	#NA	0.627178	0.9647	23_24173186_C_A	rs5949233	OA
